@@ -1,0 +1,31 @@
+/* Full background image with overlay for readability */
+.portfolio-root {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 0;
+}
+
+.portfolio-root:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('/laptop-bg.jpg') center center/cover no-repeat;
+  z-index: -2;
+  opacity: 1;
+}
+
+.portfolio-root:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(28, 27, 36, 0.55); /* Dark overlay for contrast */
+  z-index: -1;
+  pointer-events: none;
+}

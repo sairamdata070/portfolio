@@ -1,12 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Add image file names for your projects (place these images in public/projects/)
+const projectImages = {
+  "Healthcare Appointment Scheduling": "healthcare.jpg", // put in public/projects/healthcare.jpg
+  "E-Library Management System": "library.jpg",         // put in public/projects/library.jpg
+  "Hostel Room Allocation System": "hostel.jpg",        // put in public/projects/hostel.jpg
+};
+
 const Portfolio = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 },
   };
+
+  const projects = [
+    {
+      title: "Healthcare Appointment Scheduling",
+      tech: ["React", ".NET Core", "Azure Functions", "SQL"],
+      description:
+        "Built a HIPAA-compliant portal with secure role-based access, real-time scheduling, and Azure integration.",
+      image: projectImages["Healthcare Appointment Scheduling"],
+    },
+    {
+      title: "E-Library Management System",
+      tech: ["Vue.js", "Django REST", "Heroku"],
+      description:
+        "Created an OAuth-secured digital library with dynamic cataloging and automated CI/CD deployment.",
+      image: projectImages["E-Library Management System"],
+    },
+    {
+      title: "Hostel Room Allocation System",
+      tech: ["Spring Boot", "PostgreSQL", "Azure"],
+      description:
+        "Designed a secure room booking app with real-time tracking and CI/CD via Jenkins + Azure.",
+      image: projectImages["Hostel Room Allocation System"],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 text-gray-800 font-sans">
@@ -29,7 +60,7 @@ const Portfolio = () => {
         </motion.p>
         <motion.div className="mt-5 flex space-x-6 z-10" {...fadeInUp}>
           <a
-            href="mailto:manvitha2325@gmail.com"
+            href="mailto:manvithav08@gmail.com"
             className="bg-white text-indigo-600 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
           >
             Email
@@ -101,48 +132,41 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section with images */}
       <section className="bg-white px-6 py-20 max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-14 text-center text-indigo-700">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {[
-            {
-              title: "Healthcare Appointment Scheduling",
-              tech: ["React", ".NET Core", "Azure Functions", "SQL"],
-              description:
-                "Built a HIPAA-compliant portal with secure role-based access, real-time scheduling, and Azure integration.",
-            },
-            {
-              title: "E-Library Management System",
-              tech: ["Vue.js", "Django REST", "Heroku"],
-              description:
-                "Created an OAuth-secured digital library with dynamic cataloging and automated CI/CD deployment.",
-            },
-            {
-              title: "Hostel Room Allocation System",
-              tech: ["Spring Boot", "PostgreSQL", "Azure"],
-              description:
-                "Designed a secure room booking app with real-time tracking and CI/CD via Jenkins + Azure.",
-            },
-          ].map((proj, idx) => (
+          {projects.map((proj, idx) => (
             <motion.div
               key={idx}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", damping: 20 }}
-              className="bg-indigo-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl border-t-4 border-indigo-500"
+              className="relative bg-indigo-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl border-t-4 border-indigo-500 overflow-hidden"
             >
-              <h3 className="text-xl font-bold text-indigo-800 mb-2">{proj.title}</h3>
-              <div className="flex flex-wrap gap-2 mb-3">
-                {proj.tech.map((tech, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="bg-indigo-100 text-indigo-800 px-2 py-1 text-xs rounded-full font-semibold"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* Blurred background image */}
+              <img
+                src={`/projects/${proj.image}`}
+                alt={proj.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-70 blur-sm"
+                style={{ zIndex: 0 }}
+              />
+              {/* Overlay for text visibility */}
+              <div className="absolute inset-0 bg-white bg-opacity-30" style={{ zIndex: 1 }} />
+              {/* Project content */}
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold text-indigo-800 mb-2">{proj.title}</h3>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {proj.tech.map((tech, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="bg-indigo-100 text-indigo-800 px-2 py-1 text-xs rounded-full font-semibold"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-700 text-sm">{proj.description}</p>
               </div>
-              <p className="text-gray-700 text-sm">{proj.description}</p>
             </motion.div>
           ))}
         </div>

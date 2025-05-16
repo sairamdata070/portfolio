@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./Portfolio.css"; // Import the CSS for background image
+import "./Portfolio.css";
 
 const Portfolio = () => {
   const fadeInUp = {
@@ -12,8 +12,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio-root min-h-screen text-gray-800 font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] bg-[length:20px_20px]" />
+      <section className="relative flex flex-col items-center justify-center text-center py-28 hero-overlay">
         <motion.img
           src="/black-dress.jpg"
           alt="Manvitha Vutukuri"
@@ -22,23 +21,24 @@ const Portfolio = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.6 }}
         />
-        <motion.h1 className="text-5xl font-extrabold z-10" {...fadeInUp}>
+        <motion.h1 className="text-5xl font-extrabold z-10 text-white hero-title-shadow" {...fadeInUp}>
           Manvitha Vutukuri
         </motion.h1>
-        <motion.p className="mt-3 text-xl font-medium z-10" {...fadeInUp}>
+        <motion.p className="mt-3 text-xl font-medium z-10 text-white hero-title-shadow" {...fadeInUp}>
           Full Stack .NET Developer | Software Developer
         </motion.p>
         <motion.div className="mt-5 flex space-x-6 z-10" {...fadeInUp}>
           <a
             href="mailto:manvitha2325@gmail.com"
-            className="bg-white text-indigo-600 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
+            className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
           >
             Email
           </a>
           <a
             href="http://linkedin.com/in/manvitha-vutukuri-8425a2365"
             target="_blank"
-            className="bg-white text-indigo-600 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
+            rel="noopener noreferrer"
+            className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
           >
             LinkedIn
           </a>
@@ -46,8 +46,8 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="px-6 py-20 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-14 text-center text-indigo-700">Experience</h2>
+      <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
+        <h2 className="section-title">Experience</h2>
         <div className="grid md:grid-cols-2 gap-12">
           {[
             {
@@ -85,7 +85,7 @@ const Portfolio = () => {
               key={idx}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-white p-8 rounded-2xl shadow-2xl border-l-8 border-indigo-600 hover:bg-indigo-50"
+              className="card-overlay p-8 rounded-2xl shadow-2xl border-l-8 border-indigo-600 hover:bg-indigo-50"
             >
               <h3 className="text-2xl font-bold text-indigo-700">{exp.company}</h3>
               <p className="italic text-sm text-gray-500 mb-3">
@@ -102,8 +102,8 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="bg-transparent px-6 py-20 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-14 text-center text-indigo-700">Projects</h2>
+      <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
+        <h2 className="section-title">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {[
             {
@@ -129,7 +129,7 @@ const Portfolio = () => {
               key={idx}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", damping: 20 }}
-              className="bg-indigo-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl border-t-4 border-indigo-500"
+              className="card-overlay rounded-2xl p-6 shadow-xl hover:shadow-2xl border-t-4 border-indigo-500"
             >
               <h3 className="text-xl font-bold text-indigo-800 mb-2">{proj.title}</h3>
               <div className="flex flex-wrap gap-2 mb-3">
@@ -149,12 +149,12 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section className="px-6 py-20 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-10 text-indigo-700">Education</h2>
+      <section className="section-overlay px-6 py-20 max-w-4xl mx-auto text-center">
+        <h2 className="section-title">Education</h2>
         <div className="space-y-8">
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="bg-white p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
+            className="card-overlay p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
           >
             <h3 className="text-xl font-semibold text-indigo-700">
               University of Central Missouri
@@ -165,7 +165,7 @@ const Portfolio = () => {
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="bg-white p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
+            className="card-overlay p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
           >
             <h3 className="text-xl font-semibold text-indigo-700">
               SNIST, Hyderabad
@@ -178,7 +178,7 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 py-6 border-t">
+      <footer className="section-overlay text-center text-sm text-gray-200 py-6 border-t border-gray-700 bg-opacity-70">
         &copy; {new Date().getFullYear()} Manvitha Vutukuri. Built with ❤ using React, Tailwind & Framer Motion.
       </footer>
     </div>

@@ -12,7 +12,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio-root min-h-screen text-gray-800 font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-28 hero-overlay">
+      <section className="relative flex flex-col items-center justify-center text-center py-28 hero-overlay bg-hero bg-cover bg-center">
         <motion.img
           src="/black-dress.jpg"
           alt="Manvitha Vutukuri"
@@ -55,6 +55,7 @@ const Portfolio = () => {
       <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
         <h2 className="section-title">Experience</h2>
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Experience Cards */}
           {[
             {
               company: "Tria Health",
@@ -111,6 +112,7 @@ const Portfolio = () => {
       <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
         <h2 className="section-title">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* Projects */}
           {[
             {
               title: "Healthcare Appointment Scheduling",

@@ -1,13 +1,13 @@
-/* Root wrapper */
+/* Root Background */
 .portfolio-root {
-  background: linear-gradient(to bottom right, #e0f2f1, #b2ebf2); /* pastel aqua gradient */
+  background: linear-gradient(to bottom right, #e0f7fa, #e0f2f1);
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Hero Section */
 .hero-container {
-  background: linear-gradient(to right, #00796b, #26c6da); /* teal gradient */
+  background: linear-gradient(to right, #26c6da, #00acc1);
   color: white;
   padding: 6rem 2rem;
   text-align: center;
@@ -30,101 +30,71 @@
   opacity: 0.95;
 }
 
-/* Overlay Section */
-.section-overlay {
-  background: linear-gradient(to bottom right, #ffffffcc, #e0f7faee); /* semi-transparent pastel */
-  border-radius: 1.5rem;
-  margin: 2rem auto;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  backdrop-filter: blur(8px);
-}
-
-/* Section titles */
-.section-title {
-  color: #00796b; /* teal */
-}
-
-/* Card base */
+/* Universal card overlay styles */
 .card-overlay {
-  background: linear-gradient(to bottom, #ffffff, #e0f2f1);
-  border-radius: 1.5rem;
+  background: #ffffffcc;
+  border-radius: 1rem;
   padding: 1.5rem;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeInUp 0.6s ease forwards;
-  opacity: 0;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #26c6da;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Fade-in animation */
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Card hover animation */
 .card-overlay:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
 }
 
-/* Buttons */
-a.button-like {
-  border: 2px solid #00796b;
-  color: #00796b;
-  font-weight: 600;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
-  background-color: white;
-  transition: all 0.3s ease-in-out;
-  display: inline-block;
+/* Section Backgrounds */
+.experience-bg {
+  background: linear-gradient(to bottom, #e0f2f1, #b2dfdb);
+  padding: 5rem 2rem;
 }
 
-a.button-like:hover {
-  background-color: #00796b;
-  color: white;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 121, 107, 0.4);
+.projects-bg {
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+  padding: 5rem 2rem;
 }
 
-/* Tags in project cards */
+.education-bg {
+  background: linear-gradient(to bottom, #ede7f6, #d1c4e9);
+  padding: 5rem 2rem;
+}
+
+/* Tech Tag Styling */
 .tech-tag {
-  background-color: #b2dfdb;
-  color: #004d40;
-  padding: 0.25rem 0.75rem;
+  background-color: #b2ebf2;
+  color: #006064;
+  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
-  border-radius: 999px;
+  border-radius: 9999px;
   font-weight: 600;
+}
+
+/* Custom Button Style */
+.button-like {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button-like:hover {
+  background-color: #ffffff;
+  color: #00acc1;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 172, 193, 0.5);
 }
 
 /* Footer */
 footer {
-  background: linear-gradient(to right, #004d40, #00796b);
-  color: white;
+  background-color: #004d40;
+  color: #e0f2f1;
   text-align: center;
-  padding: 1.5rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .section-overlay {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
 }

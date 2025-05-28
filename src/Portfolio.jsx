@@ -21,10 +21,16 @@ const Portfolio = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.6 }}
         />
-        <motion.h1 className="text-5xl font-extrabold z-10 text-white hero-title-shadow" {...fadeInUp}>
+        <motion.h1
+          className="text-5xl font-extrabold z-10 text-white hero-title-shadow"
+          {...fadeInUp}
+        >
           Manvitha Vutukuri
         </motion.h1>
-        <motion.p className="mt-3 text-xl font-medium z-10 text-white hero-title-shadow" {...fadeInUp}>
+        <motion.p
+          className="mt-3 text-xl font-medium z-10 text-white hero-title-shadow"
+          {...fadeInUp}
+        >
           Full Stack .NET Developer | Software Developer
         </motion.p>
         <motion.div className="mt-5 flex space-x-6 z-10" {...fadeInUp}>

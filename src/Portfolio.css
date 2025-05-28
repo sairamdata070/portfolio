@@ -1,27 +1,17 @@
-/* Portfolio.css */
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
-}
-
 .portfolio-root {
-  background-color: #f9fafb;
+  background: linear-gradient(to bottom right, #f8fafc, #e0e7ff);
+  min-height: 100vh;
 }
 
+/* Hero Section */
 .hero-container {
-  position: relative;
-  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  background: linear-gradient(to right, #6366f1, #818cf8);
   color: white;
+  padding: 6rem 2rem;
   text-align: center;
-  padding: 5rem 1rem;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,58 +25,23 @@ body {
 
 .hero-subtitle {
   font-size: 1.25rem;
-  font-weight: 500;
-  color: #e0e7ff;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0.9;
-  background: linear-gradient(to right, #6366f1, #8b5cf6);
-  z-index: 0;
 }
 
-/* Sections */
+/* Overlay section wrapper */
 .section-overlay {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 1.5rem;
+  margin-top: 2rem;
 }
 
-.section-title {
-  color: #4f46e5;
-}
-
-/* Cards (Experience, Projects, Education) */
+/* Card styles */
 .card-overlay {
-  background-color: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Project cards hover effect */
 .card-overlay:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Tech Chips */
-.card-overlay span {
-  display: inline-block;
-  background-color: #e0e7ff;
-  color: #4338ca;
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-/* Footer */
-footer {
-  background-color: #1f2937;
-  color: #d1d5db;
-  padding: 1rem 0;
-  font-size: 0.875rem;
-  text-align: center;
-  border-top: 1px solid #374151;
+  background-color: #f1f5ff;
 }

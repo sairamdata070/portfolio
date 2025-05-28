@@ -1,55 +1,92 @@
-.hero-container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  flex-direction: column;
-  padding: 2rem;
+/* Portfolio.css */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
 }
 
-.hero-overlay {
-  background-image: url("/bg-image.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  filter: brightness(0.6);
-  z-index: -1;
+.portfolio-root {
+  background-color: #f9fafb;
+}
+
+.hero-container {
+  position: relative;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
 }
 
 .hero-content {
+  position: relative;
   z-index: 1;
-  padding: 20px;
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #e0e7ff;
 }
 
-/* Optional enhancements */
-a {
-  transition: all 0.3s ease;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  z-index: 0;
 }
 
-a:hover {
-  transform: scale(1.05);
+/* Sections */
+.section-overlay {
+  background-color: white;
+}
+
+.section-title {
+  color: #4f46e5;
+}
+
+/* Cards (Experience, Projects, Education) */
+.card-overlay {
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-overlay:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Tech Chips */
+.card-overlay span {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: #d1d5db;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  text-align: center;
+  border-top: 1px solid #374151;
 }

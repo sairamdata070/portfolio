@@ -10,28 +10,28 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="portfolio-root font-sans text-gray-800 bg-gray-50">
+    <div className="portfolio-root font-sans text-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white py-20 text-center">
-        <div className="container mx-auto">
+      <section className="hero-container">
+        <div className="hero-content">
           <motion.img
             src="/black-dress.jpg"
             alt="Manvitha Vutukuri"
-            className="w-36 h-36 rounded-full object-cover shadow-2xl border-4 border-white mb-6 mx-auto"
+            className="w-36 h-36 rounded-full object-cover shadow-2xl border-4 border-white mb-6"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6 }}
           />
-          <motion.h1 className="text-4xl font-bold mb-2" {...fadeInUp}>
+          <motion.h1 className="hero-title" {...fadeInUp}>
             Manvitha Vutukuri
           </motion.h1>
-          <motion.p className="text-lg font-medium mb-4" {...fadeInUp}>
+          <motion.p className="hero-subtitle" {...fadeInUp}>
             Full Stack .NET Developer | Software Developer
           </motion.p>
           <motion.div className="mt-5 flex justify-center gap-6" {...fadeInUp}>
             <a
               href="mailto:manvitha2325@gmail.com"
-              className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-100 transition"
+              className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
             >
               Email
             </a>
@@ -39,7 +39,7 @@ const Portfolio = () => {
               href="http://linkedin.com/in/manvitha-vutukuri-8425a2365"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-100 transition"
+              className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
             >
               LinkedIn
             </a>
@@ -48,15 +48,46 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="px-6 py-20 max-w-6xl mx-auto bg-white">
-        <h2 className="text-3xl font-bold text-center text-indigo-800 mb-10">Experience</h2>
+      <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
+        <h2 className="section-title text-3xl font-bold text-center mb-10">Experience</h2>
         <div className="grid md:grid-cols-2 gap-12">
-          {[...].map((exp, idx) => (
+          {[
+            {
+              company: "Tria Health",
+              role: "Full Stack .NET Developer Intern",
+              period: "2025–Present",
+              bullets: [
+                "Optimized APIs with ASP.NET Core & C# to reduce latency by 40%.",
+                "Built SPAs with Angular 17 and React improving UI responsiveness.",
+                "Implemented secure API Management with OAuth 2.0 and JWT via Azure APIM.",
+              ],
+            },
+            {
+              company: "Cognizant",
+              role: "Dot Net Developer",
+              period: "2021–2022",
+              bullets: [
+                "Deployed scalable .NET Core APIs with JWT and RBAC authorization.",
+                "Created Dockerized microservices deployed via CI/CD on Azure.",
+                "Enhanced backend with serverless functions on AWS & Azure Functions.",
+              ],
+            },
+            {
+              company: "Zaggle",
+              role: "Dot Net Developer Intern",
+              period: "2020–2021",
+              bullets: [
+                "Developed React UI for reward redemption system and theme customization.",
+                "Secured APIs using ASP.NET Identity and integrated payment services.",
+                "Utilized Entity Framework and SQL Server for high-performance data access.",
+              ],
+            },
+          ].map((exp, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-gray-100 p-8 rounded-2xl shadow-xl border-l-8 border-indigo-600 hover:bg-indigo-50"
+              className="card-overlay p-8 rounded-2xl shadow-2xl border-l-8 border-indigo-600 hover:bg-indigo-50"
             >
               <h3 className="text-2xl font-bold text-indigo-700">{exp.company}</h3>
               <p className="italic text-sm text-gray-500 mb-3">
@@ -73,15 +104,34 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="px-6 py-20 max-w-6xl mx-auto bg-gray-50">
-        <h2 className="text-3xl font-bold text-center text-indigo-800 mb-10">Projects</h2>
+      <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
+        <h2 className="section-title text-3xl font-bold text-center mb-10">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {[...].map((proj, idx) => (
+          {[
+            {
+              title: "Healthcare Appointment Scheduling",
+              tech: ["React", ".NET Core", "Azure Functions", "SQL"],
+              description:
+                "Built a HIPAA-compliant portal with secure role-based access, real-time scheduling, and Azure integration.",
+            },
+            {
+              title: "E-Library Management System",
+              tech: ["Vue.js", "Django REST", "Heroku"],
+              description:
+                "Created an OAuth-secured digital library with dynamic cataloging and automated CI/CD deployment.",
+            },
+            {
+              title: "Hostel Room Allocation System",
+              tech: ["Spring Boot", "PostgreSQL", "Azure"],
+              description:
+                "Designed a secure room booking app with real-time tracking and CI/CD via Jenkins + Azure.",
+            },
+          ].map((proj, idx) => (
             <motion.div
               key={idx}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", damping: 20 }}
-              className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl border-t-4 border-indigo-500"
+              className="card-overlay rounded-2xl p-6 shadow-xl hover:shadow-2xl border-t-4 border-indigo-500"
             >
               <h3 className="text-xl font-bold text-indigo-800 mb-2">{proj.title}</h3>
               <div className="flex flex-wrap gap-2 mb-3">
@@ -101,24 +151,36 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section className="px-6 py-20 max-w-4xl mx-auto text-center bg-white">
-        <h2 className="text-3xl font-bold mb-10 text-indigo-800">Education</h2>
+      <section className="section-overlay px-6 py-20 max-w-4xl mx-auto text-center">
+        <h2 className="section-title text-3xl font-bold mb-10">Education</h2>
         <div className="space-y-8">
-          {[...].map((edu, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="bg-gray-100 p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
-            >
-              <h3 className="text-xl font-semibold text-indigo-700">{edu.title}</h3>
-              <p className="text-gray-600 italic">{edu.subtitle}</p>
-            </motion.div>
-          ))}
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="card-overlay p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
+          >
+            <h3 className="text-xl font-semibold text-indigo-700">
+              University of Central Missouri
+            </h3>
+            <p className="text-gray-600 italic">
+              Masters in Computer Science – Dec 2024
+            </p>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="card-overlay p-6 shadow-lg rounded-xl border-l-4 border-pink-500"
+          >
+            <h3 className="text-xl font-semibold text-indigo-700">
+              SNIST, Hyderabad
+            </h3>
+            <p className="text-gray-600 italic">
+              Bachelor of Technology in Computer Science – May 2022
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="text-center text-sm text-gray-600 py-6 border-t bg-gray-100">
+      <footer className="section-overlay text-center text-sm text-gray-200 py-6 border-t border-gray-700 bg-opacity-70">
         &copy; {new Date().getFullYear()} Manvitha Vutukuri. Built with ❤ using React, Tailwind & Framer Motion.
       </footer>
     </div>

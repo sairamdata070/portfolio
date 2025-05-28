@@ -10,52 +10,48 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="portfolio-root min-h-screen text-gray-800 font-sans">
+    <div className="portfolio-root font-sans text-gray-800">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-28 hero-overlay bg-hero bg-cover bg-center">
-        <motion.img
-          src="/black-dress.jpg"
-          alt="Manvitha Vutukuri"
-          className="w-36 h-36 rounded-full object-cover shadow-2xl border-4 border-white mb-6 z-10"
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6 }}
-        />
-        <motion.h1
-          className="text-5xl font-extrabold z-10 text-white hero-title-shadow"
-          {...fadeInUp}
-        >
-          Manvitha Vutukuri
-        </motion.h1>
-        <motion.p
-          className="mt-3 text-xl font-medium z-10 text-white hero-title-shadow"
-          {...fadeInUp}
-        >
-          Full Stack .NET Developer | Software Developer
-        </motion.p>
-        <motion.div className="mt-5 flex space-x-6 z-10" {...fadeInUp}>
-          <a
-            href="mailto:manvitha2325@gmail.com"
-            className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
-          >
-            Email
-          </a>
-          <a
-            href="http://linkedin.com/in/manvitha-vutukuri-8425a2365"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
-          >
-            LinkedIn
-          </a>
-        </motion.div>
+      <section className="hero-container">
+        <div className="hero-overlay" />
+        <div className="hero-content">
+          <motion.img
+            src="/black-dress.jpg"
+            alt="Manvitha Vutukuri"
+            className="w-36 h-36 rounded-full object-cover shadow-2xl border-4 border-white mb-6"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.6 }}
+          />
+          <motion.h1 className="hero-title" {...fadeInUp}>
+            Manvitha Vutukuri
+          </motion.h1>
+          <motion.p className="hero-subtitle" {...fadeInUp}>
+            Full Stack .NET Developer | Software Developer
+          </motion.p>
+          <motion.div className="mt-5 flex justify-center gap-6" {...fadeInUp}>
+            <a
+              href="mailto:manvitha2325@gmail.com"
+              className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
+            >
+              Email
+            </a>
+            <a
+              href="http://linkedin.com/in/manvitha-vutukuri-8425a2365"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-indigo-700 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-50 transition"
+            >
+              LinkedIn
+            </a>
+          </motion.div>
+        </div>
       </section>
 
       {/* Experience Section */}
       <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title text-3xl font-bold text-center mb-10">Experience</h2>
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Experience Cards */}
           {[
             {
               company: "Tria Health",
@@ -110,9 +106,8 @@ const Portfolio = () => {
 
       {/* Projects Section */}
       <section className="section-overlay px-6 py-20 max-w-6xl mx-auto">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title text-3xl font-bold text-center mb-10">Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Projects */}
           {[
             {
               title: "Healthcare Appointment Scheduling",
@@ -158,7 +153,7 @@ const Portfolio = () => {
 
       {/* Education Section */}
       <section className="section-overlay px-6 py-20 max-w-4xl mx-auto text-center">
-        <h2 className="section-title">Education</h2>
+        <h2 className="section-title text-3xl font-bold mb-10">Education</h2>
         <div className="space-y-8">
           <motion.div
             whileHover={{ scale: 1.02 }}

@@ -8,10 +8,12 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .hero-overlay {
-  background-image: url("/bg-image.jpg"); /* Make sure bg-image.jpg is in the public folder */
+  background-image: url("/bg-image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,15 +29,27 @@
 .hero-content {
   z-index: 1;
   padding: 20px;
+  max-width: 800px;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional enhancements */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.05);
 }

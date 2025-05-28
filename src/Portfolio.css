@@ -1,11 +1,13 @@
+/* Root wrapper */
 .portfolio-root {
-  background: linear-gradient(to bottom right, #f8fafc, #e0e7ff);
+  background: linear-gradient(to bottom right, #e0f7fa, #f8bbd0);
   min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Hero Section */
 .hero-container {
-  background: linear-gradient(to right, #6366f1, #818cf8);
+  background: linear-gradient(to right, #4f46e5, #818cf8);
   color: white;
   padding: 6rem 2rem;
   text-align: center;
@@ -30,18 +32,64 @@
 
 /* Overlay section wrapper */
 .section-overlay {
-  background-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 1.5rem;
-  margin-top: 2rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+/* Titles */
+.section-title {
+  color: #4f46e5;
 }
 
 /* Card styles */
 .card-overlay {
-  background-color: white;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to bottom, #ffffff, #f0f4ff);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Project cards hover effect */
+/* Hover effect on cards */
 .card-overlay:hover {
-  background-color: #f1f5ff;
+  background-color: #eef2ff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #4f46e5, #818cf8);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Buttons */
+button,
+a.button-like {
+  transition: all 0.3s ease;
+}
+
+a.button-like:hover {
+  background-color: #e0e7ff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-overlay {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
 }

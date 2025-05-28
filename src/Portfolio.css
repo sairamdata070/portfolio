@@ -1,42 +1,41 @@
-/* Full page root container */
-.portfolio-root {
-  min-height: 100vh;
-  width: 100vw;
-  position: relative;
-  z-index: 0;
-}
-
-/* Background image */
-.portfolio-root:before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+.hero-container {
   height: 100vh;
-  background: url('/bg-image.jpg') center center/cover no-repeat;
-  z-index: -2;
-  opacity: 1;
-}
-
-/* Dark overlay for readability */
-.portfolio-root:after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(28, 27, 36, 0.55); /* Dark overlay */
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Section titles */
-.section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #1e1e2f;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  background-image: url("/bg-image.jpg"); /* Make sure bg-image.jpg is in the public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
